@@ -1,0 +1,37 @@
+{
+ "v": 1,
+ "at": 1787835184786,
+ "health": "conducting",
+ "sentence": "the seam is in the κ-band: approvals become executions at a deliberate rate — oversight is conducting",
+ "seam": {
+  "prepared": 19,
+  "approved": 11,
+  "rejected": 5,
+  "queued": 3,
+  "executed": 7,
+  "decided": 0.842,
+  "risen": 0.636
+ },
+ "doorsWaiting": 3,
+ "doors": [
+  {
+   "seq": 6,
+   "kind": "commit",
+   "stream": "ai-native-solutions",
+   "at": "2026-08-19T20:44:20.676Z"
+  },
+  {
+   "seq": 9,
+   "kind": "payment-rail",
+   "stream": "baby-kcc",
+   "at": "2026-08-19T20:44:20.676Z"
+  },
+  {
+   "seq": 17,
+   "kind": "publish-external",
+   "stream": "forge-studio",
+   "at": "2026-08-26T11:24:24.803Z"
+  }
+ ],
+ "wall": null
+}

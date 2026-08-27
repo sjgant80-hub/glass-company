@@ -1,0 +1,7 @@
+[
+ {
+  "mutation": "< → <=",
+  "snippet": "seam.risen < 0.618 ? 'starving' : 'flooding';",
+  "reason": "branch-order equivalent: when risen === 0.618 the conducting branch has already matched, so this comparison is never evaluated at the only value where < and <= differ."
+ }
+]

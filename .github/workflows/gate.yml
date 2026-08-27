@@ -1,0 +1,19 @@
+name: proof-of-play
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: the pulse law + the vendored seam against their falsifiable examples
+        run: node --test heartbeat.test.mjs seam.test.mjs
+      # ⚑ Pinned. An unpinned gate is a gate somebody else can change.
+      - name: witness — try to break the pulse law, then READ the verdict (must be CLEAN)
+        run: |
+          git clone --depth 1 --branch v0.6 https://github.com/sjgant80-hub/witness.git /tmp/witness
+          node /tmp/witness/witness.mjs mutate heartbeat.mjs \
+            --timeout 60000 --cap 600 --baseline heartbeat.witness.baseline.json \
+            --test node --test heartbeat.test.mjs | tee verdict.txt
+          grep -q '"clean": true' verdict.txt || { echo "::error::mutants survived — the gate is not clean"; exit 1; }
